@@ -1,7 +1,7 @@
 async function recognizeReceipt(imageFile, progressCallback) {
-  const apiKey = CONFIG.CLAUDE_API_KEY;
+  const apiKey = CONFIG.getApiKey();
 
-  if (!apiKey || apiKey === 'ここにAPIキーを貼り付けてください') {
+  if (!CONFIG.hasApiKey()) {
     throw new Error('API_KEY_MISSING');
   }
 

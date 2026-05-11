@@ -442,6 +442,11 @@ function initSettings() {
       return;
     }
 
+    const apiKey = document.getElementById('settingApiKey').value.trim();
+    if (apiKey) {
+      CONFIG.setApiKey(apiKey);
+    }
+
     const existing = await getUserProfile();
     await saveUserProfile({ name, email, dept, soumuEmail: existing?.soumuEmail || '' });
     showToast('設定を保存しました');
@@ -473,6 +478,10 @@ async function loadProfile() {
     document.getElementById('settingName').value = profile.name || '';
     document.getElementById('settingEmail').value = profile.email || '';
     document.getElementById('settingDept').value = profile.dept || '';
+  }
+  const savedKey = CONFIG.getApiKey();
+  if (savedKey) {
+    document.getElementById('settingApiKey').value = savedKey;
   }
 }
 
