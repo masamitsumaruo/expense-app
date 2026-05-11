@@ -1,0 +1,17 @@
+{
+  "name": "経費精算アプリ",
+  "short_name": "経費精算",
+  "description": "レシート撮影・経費精算・CSV出力アプリ",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#2563eb",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icons/icon-192.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
